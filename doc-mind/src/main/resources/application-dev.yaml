@@ -1,0 +1,59 @@
+# database configuration
+
+spring:
+  datasource:
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5434}/${DB_NAME:docmind}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:root}
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        format_sql: true
+
+# file configuration
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
+
+
+# open AI configuration
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY:demo-key}
+      chat:
+        model: ${OPENAI_CHAT_MODEL:gpt-4o-mini}
+        temperature: ${OPENAI_CHAT_TEMPERATURE:0.2}
+      embedding:
+        model: ${OPENAI_EMBEDDING_MODEL:text-embedding-3-small}
+
+# vector store configuration
+    vectorstore:
+      pgvector:
+        index-type: HNSW
+        distance-type: COSINE_DISTANCE
+        dimension: 1536
+        table-name: vector_store
+        schema-name: public
+        initialize-schema: true
+
+
+# application configuration
+app:
+  rag:
+    chunk-size: 600
+    chunk-overlap: 100
+    top-k: 5
+    similarity-threshold: 0.0
+
+  cors:
+    allowed-origins: "*"
+    allowed-methods: GET,POST,PUT,DELETE,OPTIONS
+    allowed-headers: "*"
+
+
