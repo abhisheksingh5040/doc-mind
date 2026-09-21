@@ -20,7 +20,7 @@ public class DocumentResponseDto implements Serializable {
 
     private UUID id;
     private String fileName;
-    private String fileSize;
+    private Long fileSize;
     private DocumentStatus status;
     private Integer chunksCreated;
     private String message;

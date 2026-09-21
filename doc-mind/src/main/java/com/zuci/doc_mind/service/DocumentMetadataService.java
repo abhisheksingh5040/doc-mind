@@ -1,8 +1,10 @@
 package com.zuci.doc_mind.service;
 
 import com.zuci.doc_mind.dto.DocumentResponseDto;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-public interface DocumentMetadatService {
+@Service
+public interface DocumentMetadataService {
     public DocumentResponseDto uploadAndProcess(MultipartFile file);
 }

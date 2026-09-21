@@ -2,7 +2,7 @@ package com.zuci.doc_mind.controller;
 
 import com.zuci.doc_mind.dto.ApiResponse;
 import com.zuci.doc_mind.dto.DocumentResponseDto;
-import com.zuci.doc_mind.service.DocumentMetadatService;
+import com.zuci.doc_mind.service.DocumentMetadataService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
@@ -23,7 +23,7 @@ import java.time.LocalDateTime;
 @Tag(name = "Document Management", description = "API for managing documents and uploading documents")
 public class DocumentController {
 
-    private final DocumentMetadatService documentService;
+    private final DocumentMetadataService documentService;
 
     @PostMapping(value = "/upload",consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @Operation(summary = "upload and index a document",description = "This api is used to upload and index documents files")
