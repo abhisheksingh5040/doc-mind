@@ -13,6 +13,7 @@ import org.springframework.ai.document.Document;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Slf4j
@@ -36,6 +37,7 @@ public class DocumentMetadataServiceImpl implements DocumentMetadataService {
                 .contentType(contentType)
                 .fileSize(file.getSize())
                 .status(DocumentStatus.UPLOADING)
+                .createdAt(LocalDateTime.now())
                 .build();
 
         // Save the document metadata
