@@ -42,7 +42,6 @@ spring:
         schema-name: public
         initialize-schema: true
 
-
 # application configuration
 app:
   rag:
